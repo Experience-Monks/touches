@@ -1,4 +1,4 @@
-var drag = require('./')
+var touches = require('./')
 var css = require('dom-css')
 var xtend = require('xtend')
 
@@ -13,7 +13,7 @@ require('domready')(function() {
     //start listening for drag events on window
     //but use the div as our target element for position
     var dragging = false
-    drag(window, { target: div, filtered: true })
+    touches(window, { target: div, filtered: true })
         .on('start', function(ev, pos) {
             ev.preventDefault()
             dragging = within(pos, div)

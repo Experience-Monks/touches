@@ -72,6 +72,20 @@ The current target for position offset calculation.
 
 The mousedown/touchstart, mousemove/touchmove, and mouseup/touchend events, respectively. Listeners are called with two parameters: `(ev, position)` where `ev` is the event and `position` is an `[x, y]` array of the client offset, relative to the target's top left.
 
+## demo
+
+To run the demo, first `git clone` this repo, then:
+
+```sh
+cd touches
+
+npm install
+
+npm start
+```
+
+And open `localhost:9966` in your browser.
+
 ## License
 
 MIT, see [LICENSE.md](http://github.com/Jam3/touches/blob/master/LICENSE.md) for details.
