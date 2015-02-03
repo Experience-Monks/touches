@@ -5,7 +5,7 @@
 Normalizes touch and mouse events to provide a simpler interface. Simplest case:
 
 ```js
-//get down / move / up events for mouse and touch
+//get down / move / up events for mouse and touch on window
 require('touches')()
   .on('start', mouseDown)
   .on('move', mouseMove)

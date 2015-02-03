@@ -1,24 +1,15 @@
 var drag = require('./')
 var css = require('dom-css')
+var xtend = require('xtend')
 
 require('domready')(function() {
     //create a simple box element
-    var div = document.createElement('div')
-    document.body.appendChild(div)
-    css(div, {
-        position: 'absolute',
-        top: 20,
-        left: 20,
-        background: 'gray',
-        width: 200,
-        height: 200,
-        color: 'white',
-        fontSize: '30px',
-        lineHeight: '200px',
-        textAlign: 'center'
-    })
+    var div = create()
     div.textContent = 'drag me!'
-    
+    document.body.appendChild(div)
+
+    document.body.appendChild(create({ left: 250, background: 'red' }))
+
     //start listening for drag events on window
     //but use the div as our target element for position
     var dragging = false
@@ -50,4 +41,22 @@ function within(pos, element) {
         && pos[1] >= 0
         && pos[0] < rect.width
         && pos[1] < rect.height
+}
+
+function create(opt) {
+    var div = document.createElement('div')
+    document.body.appendChild(div)
+    css(div, xtend({
+        position: 'absolute',
+        top: 20,
+        left: 20,
+        background: 'gray',
+        width: 200,
+        height: 200,
+        color: 'white',
+        fontSize: '30px',
+        lineHeight: '200px',
+        textAlign: 'center'
+    }, opt))
+    return div
 }

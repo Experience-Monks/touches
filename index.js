@@ -97,7 +97,7 @@ function offset(ev, target) {
 function getTargetTouch(touches, target) {
     return Array.prototype.slice.call(touches).filter(function(t) {
         return t.target === target
-    })[0]
+    })[0] || touches[0]
 }
 
 function getTouch(touches, id) {
