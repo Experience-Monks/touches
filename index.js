@@ -1,4 +1,3 @@
-var xtend = require('xtend')
 var Emitter = require('events/')
 
 var allEvents = [
