@@ -2,6 +2,8 @@
 
 [![stable](http://badges.github.io/stability-badges/dist/stable.svg)](http://github.com/badges/stability-badges)
 
+[(click for demo)](http://jam3.github.io/touches/) - [(source)](demo.js)
+
 Normalizes touch and mouse events to provide a simpler interface. Simplest case:
 
 ```js
