@@ -48,7 +48,6 @@ function within(pos, element) {
 
 function create(opt) {
     var div = document.createElement('div')
-    document.body.appendChild(div)
     css(div, xtend({
         position: 'absolute',
         top: 20,
