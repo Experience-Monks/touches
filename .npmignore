@@ -8,4 +8,5 @@ demo.js
 test.js
 demo/
 .npmignore
+index.html
 LICENSE.md

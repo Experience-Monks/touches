@@ -74,17 +74,21 @@ The mousedown/touchstart, mousemove/touchmove, and mouseup/touchend events, resp
 
 ## demo
 
-To run the demo, first `git clone` this repo, then:
+To run the demo from source, first `git clone` this repo, then:
 
 ```sh
 cd touches
-
 npm install
-
 npm start
 ```
 
 And open `localhost:9966` in your browser.
+
+To generate a distribution bundle: 
+
+```sh
+npm run build
+```
 
 ## License
 
