@@ -3,12 +3,15 @@ var css = require('dom-css')
 var xtend = require('xtend')
 
 require('domready')(function() {
+    var body = document.body
+
     //create a simple box element
     var div = create()
     div.textContent = 'drag me!'
-    document.body.appendChild(div)
+    body.appendChild(div)
 
-    document.body.appendChild(create({ left: 250, background: 'red' }))
+    var child = create({ left: 250, background: 'red' })
+    body.appendChild(child)
 
     //start listening for drag events on window
     //but use the div as our target element for position
