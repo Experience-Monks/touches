@@ -68,7 +68,7 @@ module.exports = function handler(element, opt) {
         //clear touch if it was lifted
         if (touch && /^touchend/.test(type)) {
             //allow end event to trigger on tracked touch
-            client = getTouch(ev.changedTouches, touch.identifier|0)
+            client = getTouch(ev.changedTouches, touch.identifier||0)
             if (client)
                 touch = null
         }
@@ -78,7 +78,7 @@ module.exports = function handler(element, opt) {
         }
         //get the tracked touch
         else if (touch)
-            client = getTouch(ev.changedTouches, touch.identifier|0)
+            client = getTouch(ev.changedTouches, touch.identifier||0)
 
         return client
     }
