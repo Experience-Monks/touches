@@ -58,11 +58,11 @@ If the events are not filtered, the `position` for an event will be the first ch
 
 #### `emitter.disable()`
 
-Disables the events associated with this emitter by removing them from the DOM element. 
+Disables the events associated with this emitter by removing them from the DOM element. Returns the emitter for chaining.
 
 #### `emitter.enable()`
 
-Enables the events associated with this emitter by adding them to the DOM element. The emitter is enabled by default.
+Enables the events associated with this emitter by adding them to the DOM element. The emitter is enabled by default. Returns the emitter for chaining.
 
 #### `emitter.target`
 
