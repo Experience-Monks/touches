@@ -7,11 +7,11 @@
 Normalizes touch and mouse events to provide a simpler interface. Simplest case:
 
 ```js
-//get down / move / up events for mouse and touch on window
+//get mouse/touch events on window
 require('touches')()
-  .on('start', mouseDown)
-  .on('move', mouseMove)
-  .on('end', mouseEnd)
+  .on('start', mouseDown)   //-> mousedown / touchstart
+  .on('move', mouseMove)    //-> mousemove / touchmove
+  .on('end', mouseEnd)      //-> mouseup   / touchend
 
 function mouseDown(ev) {
     ev.preventDefault()
