@@ -52,10 +52,14 @@ module.exports = function handler(element, opt) {
     
     emitter.enable = function enable() {
         funcs.forEach(listeners(element, true))
+
+        return emitter
     }
 
     emitter.disable = function dispose() { 
         funcs.forEach(listeners(element, false))
+
+        return emitter
     }
 
     //initially enabled
