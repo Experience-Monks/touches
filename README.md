@@ -14,7 +14,9 @@ require('touches')()
   .on('end', mouseEnd)      //-> mouseup   / touchend
 
 function mouseDown(ev) {
-    ev.preventDefault()
+  //recommended to avoid duplicate
+  //events when mobile devices support both mouse + touch
+  ev.preventDefault()
 }
 
 ...
