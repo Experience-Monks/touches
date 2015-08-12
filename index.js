@@ -10,7 +10,7 @@ var ROOT = { left: 0, top: 0 }
 module.exports = function handler(element, opt) {
     opt = opt||{}
     element = element || window
-    
+
     var emitter = new Emitter()
     emitter.target = opt.target || element
 
@@ -43,27 +43,27 @@ module.exports = function handler(element, opt) {
 
             //get 2D position
             var pos = offset(client, emitter.target)
-            
+
             //dispatch the normalized event to our emitter
             emitter.emit(name, ev, pos)
         }
         return { type: type, listener: fn }
     })
-    
+
     emitter.enable = function enable() {
         funcs.forEach(listeners(element, true))
 
         return emitter
     }
 
-    emitter.disable = function dispose() { 
+    emitter.disable = function dispose() {
         funcs.forEach(listeners(element, false))
 
         return emitter
     }
 
     //initially enabled
-    emitter.enable() 
+    emitter.enable()
     return emitter
 
     function getFilteredTouch(ev, type) {
