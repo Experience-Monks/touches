@@ -1,7 +1,7 @@
 var Emitter = require('events/')
 
 var allEvents = [
-    'touchstart', 'touchmove', 'touchend',
+    'touchstart', 'touchmove', 'touchend', 'touchcancel',
     'mousedown', 'mousemove', 'mouseup'
 ]
 
@@ -69,8 +69,8 @@ module.exports = function handler(element, opt) {
     function getFilteredTouch(ev, type) {
         var client
 
-        //clear touch if it was lifted
-        if (touch && /^touchend/.test(type)) {
+        //clear touch if it was lifted or canceled
+        if (touch && /^touch(end|cancel)/.test(type)) {
             //allow end event to trigger on tracked touch
             client = getTouch(ev.changedTouches, touch.identifier||0)
             if (client)
