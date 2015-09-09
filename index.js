@@ -32,6 +32,10 @@ module.exports = function handler (element, opt) {
     var fn = function (ev) {
       var client = ev
       if (/^touch/.test(type)) {
+        if (/^touchend$/.test(type) && opt.preventSimulated !== false) {
+          ev.preventDefault()
+        }
+        
         if (filtered) {
           client = getFilteredTouch(ev, type)
         } else {

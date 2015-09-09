@@ -13,12 +13,6 @@ require('touches')()
   .on('move', mouseMove)    //-> mousemove / touchmove
   .on('end', mouseEnd)      //-> mouseup   / touchend
 
-function mouseDown(ev) {
-  //recommended to avoid duplicate
-  //events when mobile devices support both mouse + touch
-  ev.preventDefault()
-}
-
 ...
 ```
 
@@ -54,6 +48,7 @@ The `opt` options can be:
 - `target` the element to use when calculating the `position` parameter passed to event listeners. The clientX/clientY of the event will be relative to this target
 - `filtered` whether the touch events should be filtered to the first placed finger
 - `type` can be a string, either `"mouse"` or `"touch"` if listening to only one or the other event is desired. If any other value, will listen for both mouse and touch.
+- `preventSimulated` (default `true`) if true, prevents simulated touch events by running `ev.preventDefault()` on `'touchend'` events
 
 
 If the events are not filtered, the `position` for an event will be the first changed touch associated with the `target`. 

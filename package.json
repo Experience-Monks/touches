@@ -14,15 +14,17 @@
   },
   "devDependencies": {
     "browserify": "^8.1.3",
+    "budo": "^5.0.0-beta",
     "dom-css": "^1.0.6",
     "domready": "^1.0.7",
+    "garnish": "^3.0.0",
     "standard": "^5.2.2",
     "uglify-js": "^2.4.16",
     "wzrd": "^1.2.1",
     "xtend": "^4.0.0"
   },
   "scripts": {
-    "start": "wzrd demo.js:bundle.js",
+    "start": "budo demo.js:bundle.js --host=`internal-ip` --live | garnish",
     "build": "browserify demo.js | uglifyjs -cm > bundle.js",
     "test": "standard"
   },
