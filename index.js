@@ -120,8 +120,8 @@ function getTouch (touches, id) {
 
 function listeners (e, enabled) {
   return function (data) {
-    if (enabled) e.addEventListener(data.type, data.listener)
-    else e.removeEventListener(data.type, data.listener)
+    if (enabled) e.addEventListener(data.type, data.listener, { passive: false })
+    else e.removeEventListener(data.type, data.listener, { passive: false })
   }
 }
 
