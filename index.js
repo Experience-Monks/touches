@@ -63,6 +63,7 @@ module.exports = function handler (element, opt) {
   }
 
   emitter.disable = function dispose () {
+    touch = null
     funcs.forEach(listeners(element, false))
 
     return emitter
