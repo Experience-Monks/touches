@@ -1,6 +1,6 @@
 {
   "name": "touches",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "description": "simplified touch/mouse events for flick and swipe",
   "main": "index.js",
   "license": "MIT",
